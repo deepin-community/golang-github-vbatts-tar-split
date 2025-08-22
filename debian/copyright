@@ -1,8 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: tar-split
 Source: https://github.com/vbatts/tar-split
-Files-Excluded:
-  vendor
 
 Files: *
 Copyright: 2015-2017 Vincent Batts

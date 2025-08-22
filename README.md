@@ -1,6 +1,7 @@
 # tar-split
 
-[![Build Status](https://travis-ci.org/vbatts/tar-split.svg?branch=master)](https://travis-ci.org/vbatts/tar-split)
+![Build Status](https://github.com/vbatts/tar-split/actions/workflows/go.yml/badge.svg)
+![Lint](https://github.com/vbatts/tar-split/actions/workflows/lint.yml/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/vbatts/tar-split)](https://goreportcard.com/report/github.com/vbatts/tar-split)
 
 Pristinely disassembling a tar archive, and stashing needed raw bytes and offsets to reassemble a validating original archive.
@@ -9,13 +10,13 @@ Pristinely disassembling a tar archive, and stashing needed raw bytes and offset
 
 Code API for libraries provided by `tar-split`:
 
-* https://godoc.org/github.com/vbatts/tar-split/tar/asm
-* https://godoc.org/github.com/vbatts/tar-split/tar/storage
-* https://godoc.org/github.com/vbatts/tar-split/archive/tar
+* [github.com/vbatts/tar-split/tar/asm](https://pkg.go.dev/github.com/vbatts/tar-split/tar/asm)
+* [github.com/vbatts/tar-split/tar/storage](https://pkg.go.dev/github.com/vbatts/tar-split/tar/storage)
+* [github.com/vbatts/tar-split/archive/tar](https://pkg.go.dev/github.com/vbatts/tar-split/archive/tar)
 
 ## Install
 
-The command line utilitiy is installable via:
+The command line utility is installable via:
 
 ```bash
 go get github.com/vbatts/tar-split/cmd/tar-split
