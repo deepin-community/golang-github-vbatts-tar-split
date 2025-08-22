@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"hash/crc64"
 	"io"
-	"io/ioutil"
 	"os"
 	"testing"
 
@@ -141,6 +140,7 @@ var testCases = []struct {
 	{"./testdata/iso-8859.tar.gz", "ddafa51cb03c74ec117ab366ee2240d13bba1ec3", 10240},
 	{"./testdata/extranils.tar.gz", "e187b4b3e739deaccc257342f4940f34403dc588", 10648},
 	{"./testdata/notenoughnils.tar.gz", "72f93f41efd95290baa5c174c234f5d4c22ce601", 512},
+	{"./testdata/1c51fc286aa95d9413226599576bafa38490b1e292375c90de095855b64caea6", "946caa03167a8cc707db6ff9785608b652e631dc", 1024},
 }
 
 func TestTarStream(t *testing.T) {
@@ -232,7 +232,7 @@ func BenchmarkAsm(b *testing.B) {
 					b.Fatal(err)
 				}
 				// read it all to the bit bucket
-				i1, err := io.Copy(ioutil.Discard, tarStream)
+				i1, err := io.Copy(io.Discard, tarStream)
 				if err != nil {
 					b.Fatal(err)
 				}
@@ -243,7 +243,7 @@ func BenchmarkAsm(b *testing.B) {
 
 				rc := NewOutputTarStream(fgp, sup)
 
-				i2, err := io.Copy(ioutil.Discard, rc)
+				i2, err := io.Copy(io.Discard, rc)
 				if err != nil {
 					b.Fatal(err)
 				}

@@ -1,5 +1,9 @@
 version=4
-opts="filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/tar-split-$1\.tar\.gz/,\
-      dversionmangle=s/\+ds\d*$//,\
-      repacksuffix=+ds1" \
-  https://github.com/vbatts/tar-split/tags .*/v?(\d\S*)\.tar\.gz
+opts=\
+filenamemangle=s%.*/@ANY_VERSION@%@PACKAGE@-$1.tar.gz%,\
+dversionmangle=s/\+ds\d*$//,\
+repacksuffix=+ds1,\
+downloadurlmangle=s%(api.github.com/repos/[^/]+/[^/]+)/git/refs/%$1/tarball/refs/%g,\
+searchmode=plain \
+ https://api.github.com/repos/vbatts/tar-split/git/matching-refs/tags/ \
+ https://api.github.com/repos/[^/]+/[^/]+/git/refs/tags/@ANY_VERSION@
